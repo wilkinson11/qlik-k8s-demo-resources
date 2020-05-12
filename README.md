@@ -1,6 +1,6 @@
 To add qlik-k8s-demo-resources to the cluster:
 
-1. `helm repo add demotools https://analyticsearth.github.io/qlik-k8s-demo-resources`
+1. `helm repo add demotools https://wilkinson11.github.io/qlik-k8s-demo-resources`
 1. `helm repo update`
 1. `helm upgrade --install --namespace demotools demotools demotools/qlik-k8s-demo-resources -f values.yaml`
 
@@ -36,6 +36,8 @@ Create a YAML values.yaml file where you can enable/disable a service, by defaul
 ********************************************************************************
 To add support for analytic connectors, include the following in
 your QSEoK configuration: (presumes you have loaded demo tools into namespace demotools)
+Note - This will work if the cluster is run on the same cluster as QSEoK. Not if on 
+a separate platform.
 
 ```
 engine:
@@ -58,27 +60,27 @@ The DNS address and ports for the services are as follows:
 PostgreSQL:
 ```
 HOST: demotools-postgresql.demotools.svc.cluster.local
-PORT: 5432
+PORT: 31001
 USER: qliksense
 PASSWORD: Qlik1234
 ```
 MongoDB:
 ```
 HOST: demotools-mongo.demotools.svc.cluster.local
-PORT: 27017
+PORT: 31002
 No Authentication Required
 ```
 MS SQL Server:
 ```
 HOST: demotools-mssqlserver.demotools.svc.cluster.local
-PORT: 1433
+PORT: 31003
 USER: sa
 PASSWORD: Qlik1234
 ```
 Apache Drill:
 ```
 HOST: demotools-drill.demotools.svc.cluster.local
-PORT: 31010
+PORT: 31004
 No Authentication Required
 ```
 ********************************************************************************

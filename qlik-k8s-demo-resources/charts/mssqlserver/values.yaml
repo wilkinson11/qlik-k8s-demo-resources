@@ -21,7 +21,7 @@ service:
   type: NodePort
   ports:
     - port: 1433
-      nodePort: 31433
+      nodePort: 31003
 
 accepteula: false
 
